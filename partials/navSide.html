@@ -1,0 +1,21 @@
+<div layout="column" width="50%">
+	<uib-accordion close-others="true">
+		<div ng-click="myService.getArticles(category.id)" ng-repeat="category in myService.allCategories">
+			<div uib-accordion-group class="panel-default" heading="{{category.name}}">
+		      <div ng-repeat="article in myService.allArticles" ng-click = myService.sendArticleReadByUser(article.id)>
+				  <div layout = "column">
+  					<div flex="90">
+  						<div class="row" style="padding:10px;">
+  							<h4>{{article.headline}}</h4>
+  						</div>
+  						<div class="row" style="padding:10px;">
+  							<a href='{{article.web_url}}' target="_blank"> {{article.snippet}} </a> <hr> 
+  						</div>
+  					</div>  
+				  </div>
+		      </div>
+		    </div>
+		</div>
+	</uib-accordion>
+</div>
+
